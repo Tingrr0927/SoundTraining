@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音樂答題APP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- 第一題 -->
+        <div class="question" id="question1">
+            <div class="music-player">
+                <audio id="audio1" src="audio/song1.mp3"></audio>
+                <button id="play-button1">播放音樂</button>
+            </div>
+            <p>請選出與音樂相關的歌手：</p>
+            <div class="options">
+                <button data-correct="false">
+                    <img src="img/singer1.jpg" alt="鄧麗君">
+                    A. 鄧麗君
+                </button>
+                <button data-correct="true">
+                    <img src="img/singer2.jpg" alt="葉啟田">
+                    B. 葉啟田
+                </button>
+                <button data-correct="false">
+                    <img src="img/singer3.jpg" alt="鳳飛飛">
+                    C. 鳳飛飛
+                </button>
+            </div>
+        </div>
+        <div id="result" class="hidden">
+            <p>答對了！🎉</p> <!-- 顯示答對！和 Emoji -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
