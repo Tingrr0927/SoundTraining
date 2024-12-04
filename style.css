@@ -1,3 +1,4 @@
+/* 基本樣式 */
 body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -5,15 +6,13 @@ body {
     margin: 0;
     padding: 0px;
     background: url('img/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            
-
+    background-size: cover;
 }
 
 .app {
-    background-color: transparent; /* 移除白色背景 */
-    box-shadow: none; /* 移除可能的陰影 */
-    border: none; /* 確保沒有邊框 */
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 }
 
 button {
@@ -48,9 +47,8 @@ button img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-
 .hidden {
-   opacity: 0;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -91,50 +89,146 @@ button img {
 .word-chain {
     display: flex;
     justify-content: center;
-    gap: 15px; /* 增加間距 */
+    gap: 15px;
     margin-top: 20px;
-    font-size: 32px; /* 整體字體加大 */
+    font-size: 32px;
     font-weight: bold;
     color: #333;
 }
 
 .word-chain span {
-    width: 50px; /* 增加寬度 */
-    height: 50px; /* 增加高度 */
-    line-height: 50px; /* 確保文字垂直居中 */
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     background-color: #f0f0f0;
-    border: 2px solid #ccc; /* 增加邊框粗細 */
-    border-radius: 8px; /* 圓角化 */
-    font-size: 36px; /* 單獨控制 "_" 的大小 */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 36px;
     font-weight: 600;
 }
 
 .back-to-index {
-    position: fixed; /* 固定位置，與畫面滾動無關 */
-    bottom: 0; /* 緊貼底部 */
-    right: 0; /* 緊貼右側 */
-    background-color: #f04d4d; /* 背景顏色 */
-    color: white; /* 按鈕文字顏色 */
-    padding: 15px 30px; /* 增加按鈕內部間距 */
-    font-size: 1.2rem; /* 文字稍微大一點 */
-    font-family: 'Poppins', sans-serif; /* 字體設置 */
-    border-radius: 0 0 0 10px; /* 只讓左上角有圓角 */
-    text-decoration: none; /* 移除文字下劃線 */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* 過渡效果 */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #f04d4d;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0 0 0 10px;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* 滑鼠懸停效果 */
 .back-to-index:hover {
-    background-color: #d43b3b; /* 深色背景 */
-    transform: scale(1.1); /* 放大按鈕 */
+    background-color: #d43b3b;
+    transform: scale(1.1);
 }
 
-p, span {
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-    font-size: 24px; /* 調整文字大小，例如 24px */
-    font-weight: bold; /* 使文字加粗（選擇性） */
- background: rgba(0, 0, 0, 0.5); 
+/* 針對不同設備的調整 */
+
+/* 手機/小型設備 */
+@media (max-width: 600px) {
+    body {
+        background-size: cover;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    button img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .word-chain {
+        flex-wrap: wrap; /* 使單字鏈可以換行 */
+        font-size: 28px;
+    }
+
+    .word-chain span {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    #result {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .back-to-index {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    p, span {
+        font-size: 20px;
+    }
+}
+
+/* 平板設備 */
+@media (max-width: 768px) {
+    button {
+        padding: 12px 25px;
+        font-size: 17px;
+    }
+
+    .word-chain {
+        font-size: 30px;
+    }
+
+    .word-chain span {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 34px;
+    }
+
+    #result {
+        font-size: 19px;
+    }
+
+    .back-to-index {
+        font-size: 1.1rem;
+        padding: 14px 25px;
+    }
+
+    p, span {
+        font-size: 22px;
+    }
+}
+
+/* 大型設備 */
+@media (min-width: 1200px) {
+    .word-chain {
+        font-size: 36px;
+    }
+
+    .word-chain span {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 48px;
+    }
+
+    #result {
+        font-size: 22px;
+        padding: 18px;
+    }
+
+    .back-to-index {
+        font-size: 1.3rem;
+        padding: 16px 30px;
+    }
+
+    p, span {
+        font-size: 26px;
+    }
 }
