@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲說明</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 全頁樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('img/background.jpg'); /* 可替換成合適的背景圖 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 去掉灰底，使用透明背景的文字內容 */
+        .instructions {
+    color: white; /* 文字為白色 */
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* 添加不透明黑底 */
+    text-align: center;
+}
+
+        .instructions h1 {
+            font-size: 2rem;
+            color: #fff; /* 保持白色標題 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 增加文字陰影，提升可讀性 */
+        }
+
+        .instructions p {
+            font-size: 1.2rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* 同樣加陰影提升文字辨識度 */
+            line-height: 1.6;
+        }
+
+        /* 開始遊戲按鈕 */
+        .start-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-button:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>歡迎來到簡單模式！</h1>
+        <p>
+            在這個模式中，你將面臨與音樂和文字相關的趣味挑戰。<br>
+            仔細觀察、傾聽提示，完成每一個問題。<br>
+            準備好就開始挑戰吧！
+        </p>
+        <p>點擊下方按鈕，開始挑戰！</p>
+        <a href="question1.html" class="start-button">開始遊戲</a>
+    </div>
+</body>
+</html>

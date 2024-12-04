@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智古以來 憶路尋香</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="question">
+        <!-- 播放音樂按鈕放在選項上方 -->
+        <button class="play-music" id="playMusic">播放音樂</button>
+
+        <h1>請選出與音樂相關的圖片：</h1>
+        <div class="options">
+            <button class="option">
+                <img src="img/q5-1.jpg" alt="選項 1">
+                <span>A. 鳥</span>
+            </button>
+            <button class="option">
+                <img src="img/q5-2.jpg" alt="選項 2">
+                <span>B. 松鼠</span>
+            </button>
+            <button class="option">
+                <img src="img/q5-3.jpg" alt="選項 3">
+                <span>C. 貓咪</span>
+            </button>
+        </div>
+
+        <!-- 下一題按鈕，預設隱藏 -->
+        <a href="question6.html" class="next-button hidden" id="next">下一題</a>
+        
+        <!-- 回應顯示 -->
+        <div id="response" class="hidden"></div>
+    </div>
+
+    <!-- 音檔 -->
+    <audio id="audio" src="audio/song5.mp3"></audio> <!-- 播放音樂的音檔 -->
+    <audio id="answerAudio" src="audio/ans5.mp3"></audio> <!-- 答案後播放的音檔 -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const correctAnswer = "A"; // 定義正確答案
+    const options = document.querySelectorAll(".option");
+    const response = document.getElementById("response");
+    const nextButton = document.getElementById("next");
+    const audio = document.getElementById("audio"); // 取得音檔元素（初始音樂）
+    const answerAudio = document.getElementById("answerAudio"); // 答案後播放的音檔
+    const playMusicButton = document.getElementById("playMusic"); // 播放音樂按鈕
+
+    // 播放音樂按鈕事件
+    playMusicButton.addEventListener("click", () => {
+        audio.play(); // 播放初始音樂
+    });
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            const selectedAnswer = option.querySelector("span").textContent[0]; // 獲取選項的字母（例如 A）
+            if (selectedAnswer === correctAnswer) {
+                response.textContent = "答對了！🎉";
+                response.classList.remove("wrong");
+                response.classList.add("correct");
+                nextButton.classList.remove("hidden"); // 顯示「下一題」按鈕
+                audio.pause(); // 停止音樂
+                audio.currentTime = 0; // 重置音樂播放位置
+                answerAudio.play(); // 播放答案後的音檔
+            } else {
+                response.textContent = "答錯了！請再試一次。";
+                response.classList.remove("correct");
+                response.classList.add("wrong");
+            }
+            response.classList.remove("hidden"); // 顯示回應訊息
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

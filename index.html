@@ -3,39 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>音樂答題APP</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>智古以來 憶路尋香</title>
+    <style>
+        /* 全局樣式 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+h1 {
+            text-align: center;
+            font-size: 2rem; /* 字體大小 */
+            color: black;    /* 文字顏色 */
+            margin-top: 20px; /* 與橫幅的間距 */
+        }
+        /* 橫幅樣式 */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* 按鈕區域 */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        /* 按鈕樣式 */
+        .button-container a {
+            text-decoration: none;
+            padding: 25px 200px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+            border: 2px solid white;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        /* 按鈕 hover 效果 */
+        .button-container a:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-    <div class="app">
-        <!-- 第一題 -->
-        <div class="question" id="question1">
-            <div class="music-player">
-                <audio id="audio1" src="audio/song1.mp3"></audio>
-                <button id="play-button1">播放音樂</button>
-            </div>
-            <p>請選出與音樂相關的歌手：</p>
-            <div class="options">
-                <button data-correct="false">
-                    <img src="img/singer1.jpg" alt="鄧麗君">
-                    A. 鄧麗君
-                </button>
-                <button data-correct="true">
-                    <img src="img/singer2.jpg" alt="葉啟田">
-                    B. 葉啟田
-                </button>
-                <button data-correct="false">
-                    <img src="img/singer3.jpg" alt="鳳飛飛">
-                    C. 鳳飛飛
-                </button>
-            </div>
-        </div>
-        <div id="result" class="hidden">
-            <p>答對了！🎉</p> <!-- 顯示答對！和 Emoji -->
-        </div>
+    <!-- 上方橫幅 -->
+    <header>
+        智古以來 憶路尋香
+    </header>
+<h1>請從下方選擇難度開始遊戲！</h1>
+    <!-- 按鈕區域 -->
+    <div class="button-container">
+        <a href="simple/simpleintro.html">簡單</a>
+        <a href="normal/normalintro.html">一般</a>
+        <a href="difficult/difficultintro.html">困難</a>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

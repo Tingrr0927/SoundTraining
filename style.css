@@ -3,16 +3,17 @@ body {
     text-align: center;
     background-color: #f5f5f5;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
+    background: url('img/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            
+
 }
 
 .app {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* 移除白色背景 */
+    box-shadow: none; /* 移除可能的陰影 */
+    border: none; /* 確保沒有邊框 */
 }
 
 button {
@@ -109,3 +110,31 @@ button img {
     font-weight: 600;
 }
 
+.back-to-index {
+    position: fixed; /* 固定位置，與畫面滾動無關 */
+    bottom: 0; /* 緊貼底部 */
+    right: 0; /* 緊貼右側 */
+    background-color: #f04d4d; /* 背景顏色 */
+    color: white; /* 按鈕文字顏色 */
+    padding: 15px 30px; /* 增加按鈕內部間距 */
+    font-size: 1.2rem; /* 文字稍微大一點 */
+    font-family: 'Poppins', sans-serif; /* 字體設置 */
+    border-radius: 0 0 0 10px; /* 只讓左上角有圓角 */
+    text-decoration: none; /* 移除文字下劃線 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* 過渡效果 */
+}
+
+/* 滑鼠懸停效果 */
+.back-to-index:hover {
+    background-color: #d43b3b; /* 深色背景 */
+    transform: scale(1.1); /* 放大按鈕 */
+}
+
+p, span {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-size: 24px; /* 調整文字大小，例如 24px */
+    font-weight: bold; /* 使文字加粗（選擇性） */
+ background: rgba(0, 0, 0, 0.5); 
+}

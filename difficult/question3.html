@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智古以來 憶路尋香</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 接龍字樣式 */
+        .word-chain span {
+            display: inline-block;
+            width: 30px;
+            height: 40px;
+            margin: 5px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 40px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 播放音樂按鈕樣式 */
+        .play-music {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-music:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="question">
+        <!-- 播放音樂按鈕放在選項上方 -->
+        <button class="play-music" id="playMusic">播放音樂</button>
+
+        <h1>音樂播放完後，請完成接龍字：</h1>
+        <div class="word-chain">
+            <!-- 用 _ 表示接龍字 -->
+            <span id="word1">_</span>
+            <span id="word2">_</span>
+            <span id="word3">_</span>
+            <span id="word4">_</span>
+            <span id="word5">_</span>
+            <span id="word6">_</span>
+            <span id="word7">_</span>
+        </div>
+
+        <!-- 下一題按鈕，預設隱藏 -->
+        <a href="question4.html" class="next-button hidden" id="next">下一題</a>
+
+        <!-- 回應顯示 -->
+        <div id="response" class="hidden"></div>
+    </div>
+
+    <!-- 音檔 -->
+    <audio id="audio" src="audio/song3.mp3"></audio> <!-- 播放音樂的音檔 -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("audio"); // 初始音樂
+            const playMusicButton = document.getElementById("playMusic"); // 播放音樂按鈕
+            const nextButton = document.getElementById("next"); // 下一題按鈕
+
+            // 播放音樂按鈕事件
+            playMusicButton.addEventListener("click", () => {
+                audio.play(); // 播放音樂
+            });
+
+            // 當音樂播放結束時，顯示下一題按鈕
+            audio.addEventListener("ended", () => {
+                nextButton.classList.remove("hidden"); // 顯示下一題按鈕
+            });
+        });
+    </script>
+</body>
+</html>
