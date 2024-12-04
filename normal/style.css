@@ -14,20 +14,28 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 5px;
 }
 
 .options {
     display: flex;
+    flex-wrap: wrap; /* 適配不同螢幕時換行 */
     justify-content: center;
     gap: 20px;
+    margin: 20px auto;
+    padding: 10px;
 }
 
 button.option {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 450px;
-    margin: 20px;
+    width: 90%; /* 預設為 90% 寬度，適配窄螢幕 */
+    max-width: 450px; /* 最大寬度 450px */
+    margin: 20px auto;
     padding: 10px;
     font-size: 16px;
     color: white;
@@ -40,14 +48,15 @@ button.option {
 }
 
 button.option img {
-    width: 350px;
-    height: 350px;
+    width: 100%; /* 適配按鈕的寬度 */
+    max-width: 350px; /* 最大寬度 */
+    height: auto; /* 保持比例 */
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
 button.option:hover {
-    transform: scale(1.1);
+    transform: scale(1.05); /* 適當放大 */
 }
 
 a.next-button {
@@ -71,11 +80,11 @@ a.next-button:hover {
 
 /* 播放音樂按鈕 */
 button.play-music {
-    margin-top: 20px;
+    margin: 20px auto;
     padding: 10px 20px;
     background-color: #ff9800;
     color: white;
-    font-size: 30px;
+    font-size: 20px; /* 適配更小字體 */
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -129,5 +138,46 @@ button.play-music:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    button.option {
+        font-size: 14px;
+        width: 100%; /* 適應較窄屏幕 */
+    }
+
+    button.option img {
+        max-width: 250px; /* 減少圖片大小 */
+    }
+
+    button.play-music {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    button.option {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    button.option img {
+        max-width: 200px; /* 手機上更小的圖片 */
+    }
+
+    button.play-music {
+        font-size: 16px;
     }
 }
