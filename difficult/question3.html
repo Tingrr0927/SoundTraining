@@ -6,21 +6,33 @@
     <title>智古以來 憶路尋香</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 接龍字樣式 */
-        .word-chain span {
-            display: inline-block;
-            width: 30px;
-            height: 40px;
-            margin: 5px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 40px;
-            border: 2px solid #000;
-            border-radius: 5px;
-            background-color: #f8f8f8;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
+      .word-chain span {
+    display: inline-block;
+    width: 35px;
+    height: 40px;
+    margin: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #f8f8f8; /* 背景一致 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: transparent; /* 預設字體透明 */
+}
+
+
+.word-chain span.known {
+    color: #000; /* 已知部分字體顯示黑色 */
+border: 1px solid #000;
+}
+/* 空白接龍樣式 */
+.word-chain .unknown {
+    background-color: #f8f8f8; /* 灰白背景，表示空白 */
+    border: 2px solid #000;
+}
+
 
         /* 播放音樂按鈕樣式 */
         .play-music {
@@ -48,16 +60,18 @@
         <button class="play-music" id="playMusic">播放音樂</button>
 
         <h1>音樂播放完後，請完成接龍字：</h1>
-        <div class="word-chain">
-            <!-- 用 _ 表示接龍字 -->
-            <span id="word1">_</span>
-            <span id="word2">_</span>
-            <span id="word3">_</span>
-            <span id="word4">_</span>
-            <span id="word5">_</span>
-            <span id="word6">_</span>
-            <span id="word7">_</span>
-        </div>
+<h2>你問我愛你有多深，我愛你有幾分，你去想一想，你去看一看</h2>
+       <div class="word-chain">
+       <span class="unknown">_</span>
+    <span class="unknown">_</span>
+    <span class="unknown">_</span>
+    <span class="unknown">_</span>
+    <span class="unknown">_</span>
+    <span class="unknown">_</span>
+    <span class="unknown">_</span>
+</div>
+
+
 
         <!-- 下一題按鈕，預設隱藏 -->
         <a href="question4.html" class="next-button hidden" id="next">下一題</a>
